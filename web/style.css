@@ -1,0 +1,625 @@
+:root {
+    --white: #ffffff;
+    --mist: #f3f3f4;
+    --stone: #dcdde0;
+    --slate: #62666d;
+    --graphite: #25272b;
+    --gold: #c9a24a;
+    --gold-light: #ecd48f;
+    --gold-deep: #8f6d1c;
+    --display: "Jost", "Helvetica Neue", Arial, sans-serif;
+    --body: "Newsreader", Georgia, serif;
+    --nav-h: 4.25rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    background: var(--white);
+    color: var(--graphite);
+    font-family: var(--body);
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+img { max-width: 100%; }
+
+a { color: inherit; }
+
+:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ---------- Tipografía ---------- */
+h1, h2, h3 { margin: 0; font-family: var(--display); }
+
+h2 {
+    font-weight: 600;
+    font-size: clamp(2rem, 4.5vw, 3.1rem);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+}
+
+h2::after {
+    content: "";
+    display: block;
+    width: 3.5rem;
+    height: 3px;
+    margin-top: 1.1rem;
+    background: var(--gold);
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 1.25;
+}
+
+.lead {
+    max-width: 52ch;
+    margin: 1.5rem 0 0;
+    color: var(--slate);
+}
+
+/* ---------- Botones ---------- */
+.btn {
+    display: inline-block;
+    padding: 0.85rem 1.9rem;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.02rem;
+    text-decoration: none;
+    color: var(--graphite);
+    background: var(--gold);
+    border: 2px solid var(--gold);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.btn:hover {
+    background: var(--gold-light);
+    border-color: var(--gold-light);
+}
+
+.btn-ghost {
+    background: transparent;
+    border-color: var(--graphite);
+}
+
+.btn-ghost:hover {
+    background: var(--graphite);
+    border-color: var(--graphite);
+    color: var(--white);
+}
+
+.btn-small { padding: 0.5rem 1.3rem; font-size: 0.95rem; }
+
+.btn-dark {
+    color: var(--white);
+    background: var(--graphite);
+    border-color: var(--graphite);
+}
+
+.btn-dark:hover {
+    color: var(--graphite);
+    background: var(--white);
+    border-color: var(--white);
+}
+
+/* ---------- Navegación ---------- */
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    height: var(--nav-h);
+    padding: 0 clamp(1rem, 4vw, 3rem);
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom: 1px solid var(--stone);
+    backdrop-filter: blur(8px);
+}
+
+.nav-brand img { display: block; height: 2.1rem; width: auto; }
+
+.nav-links { display: flex; gap: clamp(1rem, 3vw, 2.25rem); }
+
+.nav-links a {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--slate);
+}
+
+.nav-links a:hover { color: var(--gold-deep); }
+
+/* ---------- Hero ---------- */
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: center;
+    max-width: 1280px;
+    min-height: calc(100svh - var(--nav-h));
+    margin: 0 auto;
+    padding: 3rem clamp(1.5rem, 5vw, 4rem);
+    background: repeating-radial-gradient(circle at 76% 52%, transparent 0 70px, rgba(37, 39, 43, 0.045) 70px 71px);
+}
+
+.hero-text {
+    width: min(560px, 100%);
+    text-align: center;
+}
+
+.hero-text h1 { line-height: 0; }
+
+.hero-text h1 img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.tagline {
+    margin: 3rem 0 2.25rem;
+    text-wrap: balance;
+    font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+    line-height: 1.5;
+}
+
+.hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+
+/* Medalla: el personaje sale del disco */
+.medallion {
+    --w: min(440px, 80vw);
+    position: relative;
+    justify-self: center;
+    width: var(--w);
+    aspect-ratio: 1;
+    margin-top: calc(var(--w) * 0.3);
+}
+
+.disc {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 35%, #4a4d54 0%, var(--graphite) 70%);
+    box-shadow:
+        0 0 0 10px var(--gold),
+        0 0 0 13px var(--white),
+        0 0 0 14px var(--stone),
+        0 30px 60px rgba(37, 39, 43, 0.3);
+}
+
+.disc::after {
+    content: "";
+    position: absolute;
+    inset: 5%;
+    border-radius: 50%;
+    border: 2px dashed rgba(236, 212, 143, 0.55);
+}
+
+.figure {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 130%;
+    /* La mitad superior queda libre; la inferior se recorta con el círculo */
+    -webkit-mask-image: linear-gradient(#000, #000), radial-gradient(closest-side, #000 calc(100% - 1px), transparent 100%);
+    -webkit-mask-size: 100% 61.5%, 100% 76.9%;
+    -webkit-mask-position: top, bottom;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-composite: source-over;
+    mask-image: linear-gradient(#000, #000), radial-gradient(closest-side, #000 calc(100% - 1px), transparent 100%);
+    mask-size: 100% 61.5%, 100% 76.9%;
+    mask-position: top, bottom;
+    mask-repeat: no-repeat;
+    mask-composite: add;
+}
+
+.figure img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: 50% 100%;
+    transform: translateX(5%); /* centra el cuerpo de Tenshi en la medalla */
+}
+
+/* ---------- Historia ---------- */
+.story {
+    padding: clamp(4rem, 9vw, 7rem) 0;
+    background: var(--graphite);
+    color: var(--white);
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: start;
+}
+
+.story h2 { color: var(--white); }
+
+.story-text {
+    position: relative;
+    padding-left: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.story-text::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--gold-light), var(--gold) 60%, transparent);
+    box-shadow: 0 0 18px 2px rgba(236, 212, 143, 0.6);
+}
+
+.story-text p { margin: 0 0 1.25rem; max-width: 56ch; color: #d6d7da; }
+
+.story-text .story-lead {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.35;
+    color: var(--white);
+}
+
+.story-text .question {
+    margin: 2rem 0 0;
+    font-style: italic;
+    color: var(--gold-light);
+}
+
+/* ---------- Secciones y rejillas ---------- */
+.section { padding: clamp(4rem, 9vw, 7rem) 0; }
+
+.split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: center;
+}
+
+.split-head { align-self: start; }
+
+#juego .split, #personajes .split { align-items: start; }
+
+.split-head .lead { margin-top: 1.5rem; }
+
+/* ---------- Cómo se juega ---------- */
+.steps { display: grid; }
+
+.step {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    border-top: 1px solid var(--stone);
+}
+
+.step:first-child { border-top: 0; padding-top: 0; }
+
+.step-icon {
+    display: grid;
+    place-items: center;
+    width: 4rem;
+    height: 4rem;
+    color: var(--gold-deep);
+    background: var(--mist);
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+}
+
+.step-icon svg { width: 2.1rem; height: 2.1rem; }
+
+.step h3 { margin-bottom: 0.4rem; }
+
+.step p { margin: 0; color: var(--slate); max-width: 52ch; }
+
+/* ---------- La base ---------- */
+.base-section {
+    padding: clamp(4rem, 9vw, 7rem) 0;
+    background: var(--mist);
+    border-top: 1px solid var(--stone);
+    border-bottom: 1px solid var(--stone);
+}
+
+.base {
+    position: relative;
+    justify-self: center;
+    width: var(--size);
+    aspect-ratio: 1;
+}
+
+.base-plate {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #ffffff, var(--stone) 80%);
+    box-shadow:
+        0 0 0 1px #c5c7cb,
+        0 0 0 10px var(--white),
+        0 0 0 11px var(--stone),
+        0 30px 50px rgba(37, 39, 43, 0.2);
+}
+
+.base-slot {
+    position: absolute;
+    inset: 27%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 35%, #4a4d54, var(--graphite) 75%);
+    box-shadow: 0 0 0 6px var(--gold), inset 0 6px 14px rgba(0, 0, 0, 0.5);
+}
+
+.base-slot::after {
+    content: "";
+    position: absolute;
+    inset: 22%;
+    border-radius: 50%;
+    border: 2px dashed rgba(236, 212, 143, 0.6);
+}
+
+.led {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.05rem;
+    height: 1.05rem;
+    margin: -0.525rem;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0.3;
+    transform: rotate(calc(var(--i) * 30deg)) translateY(calc(var(--size) * -0.4));
+    animation: led 3.6s linear infinite;
+    animation-delay: calc(var(--i) * 0.3s);
+}
+
+@keyframes led {
+    0%, 100% { opacity: 0.3; box-shadow: none; }
+    10% { opacity: 1; box-shadow: 0 0 14px 3px var(--gold-light); }
+    30% { opacity: 0.3; box-shadow: none; }
+}
+
+.features {
+    margin: 2rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 1rem;
+}
+
+.features li {
+    position: relative;
+    padding-left: 2rem;
+    max-width: 52ch;
+    color: var(--slate);
+}
+
+.features li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 0 3px var(--mist), 0 0 0 4px var(--gold);
+}
+
+.features strong { color: var(--graphite); font-weight: 600; }
+
+/* ---------- Personajes ---------- */
+.char-name { margin: 2.25rem 0 0; font-size: 2rem; }
+
+.role {
+    margin: 0.25rem 0 1rem;
+    font-style: italic;
+    color: var(--gold-deep);
+}
+
+.split-head > p:last-child { margin: 0; max-width: 46ch; color: var(--slate); }
+
+.medals {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+    align-items: end;
+}
+
+.medal { margin: 0; text-align: center; }
+
+.medal figcaption {
+    margin-top: 1.1rem;
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--slate);
+}
+
+.medal-disc {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.medal-tenshi {
+    background: radial-gradient(circle at 50% 35%, #4a4d54, var(--graphite) 75%);
+    box-shadow: 0 0 0 6px var(--gold), 0 0 0 8px var(--white), 0 0 0 9px var(--stone);
+}
+
+.medal-tenshi img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 0;
+    transform: translate(12%, -4.5%) scale(1.7);
+    transform-origin: 50% 0;
+}
+
+.medal-locked {
+    display: grid;
+    place-items: center;
+    background: var(--mist);
+    border: 2px dashed #b9bcc2;
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    color: #b9bcc2;
+}
+
+/* ---------- Prueba de concepto ---------- */
+.concept {
+    padding: clamp(4rem, 9vw, 7rem) 0;
+    background: var(--graphite);
+    color: var(--white);
+}
+
+.concept h2 { color: var(--white); }
+
+.concept .lead { color: #d6d7da; }
+
+.concept-shot {
+    margin: 2.5rem 0 0;
+    border-radius: 14px;
+    box-shadow:
+        0 0 0 3px var(--gold),
+        0 0 0 5px var(--graphite),
+        0 0 0 6px rgba(236, 212, 143, 0.5),
+        0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+.concept-shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+}
+
+/* ---------- Futuro ---------- */
+
+.future .lead { margin-bottom: 3rem; }
+
+.future-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem clamp(1.5rem, 4vw, 3rem);
+}
+
+.future-grid article {
+    padding-top: 1.25rem;
+    border-top: 2px solid var(--gold);
+}
+
+.future-grid h3 { font-size: 1.25rem; margin-bottom: 0.4rem; }
+
+.future-grid p { margin: 0; color: var(--slate); font-size: 1.1rem; }
+
+/* ---------- Lanzamiento ---------- */
+.launch {
+    padding: clamp(4rem, 9vw, 6.5rem) 0;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    text-align: center;
+}
+
+.launch h2::after { margin-left: auto; margin-right: auto; background: var(--graphite); }
+
+.launch-inner p { margin: 1.5rem auto 0; max-width: 46ch; }
+
+.signup {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 2rem auto 0;
+    max-width: 520px;
+}
+
+.signup input {
+    flex: 1 1 260px;
+    min-width: 0;
+    padding: 0.85rem 1.4rem;
+    font-family: var(--body);
+    font-size: 1.1rem;
+    color: var(--graphite);
+    background: var(--white);
+    border: 2px solid var(--white);
+    border-radius: 999px;
+}
+
+.signup input:focus-visible { outline-color: var(--graphite); }
+
+.launch .signup-msg { min-height: 1.7em; margin-top: 1rem; font-weight: 600; }
+
+/* ---------- Pie ---------- */
+footer {
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    background: var(--graphite);
+    color: #b5b7bc;
+}
+
+footer img { display: block; width: 180px; height: auto; margin: 0 auto 1.25rem; }
+
+footer p { margin: 0; font-size: 0.95rem; }
+
+/* ---------- Responsive y accesibilidad ---------- */
+@media (max-width: 900px) {
+    .nav-links { display: none; }
+    .nav { justify-content: space-between; }
+
+    .hero { grid-template-columns: 1fr; min-height: 0; padding-top: 2.5rem; padding-bottom: 4rem; }
+
+    .story-grid, .split { grid-template-columns: 1fr; }
+
+    .split-reverse .base { order: 2; }
+
+    .future-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+    body { font-size: 1.1rem; }
+
+    .step { grid-template-columns: 3.25rem 1fr; gap: 1rem; }
+    .step-icon { width: 3.25rem; height: 3.25rem; }
+    .step-icon svg { width: 1.7rem; height: 1.7rem; }
+
+    .future-grid { grid-template-columns: 1fr; }
+
+    .btn { width: 100%; text-align: center; }
+    .btn-small { width: auto; }
+    .signup .btn { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .led { animation: none; opacity: 0.8; }
+    .btn { transition: none; }
+}

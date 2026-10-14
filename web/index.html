@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Medalion Project: un RPG 2D clásico por turnos donde tus personajes viven en medallas físicas NFC. Recluta personajes, intercámbialos y juega con tu base.">
+    <title>Medalion Project | RPG por turnos con medallas NFC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="nav" aria-label="Secciones">
+        <a class="nav-brand" href="#inicio" aria-label="Medalion Project, inicio">
+            <img src="logo.png" alt="Medalion Project" width="995" height="259">
+        </a>
+        <div class="nav-links">
+            <a href="#historia">Historia</a>
+            <a href="#juego">Cómo se juega</a>
+            <a href="#base">La base</a>
+            <a href="#personajes">Personajes</a>
+            <a href="#concepto">Concepto</a>
+            <a href="#futuro">Futuro</a>
+        </div>
+        <a class="btn btn-small" href="#lanzamiento">Avísame</a>
+    </nav>
+
+    <header class="hero" id="inicio">
+        <div class="hero-text">
+            <h1>
+                <img src="logo.png" alt="Medalion Project" width="995" height="259">
+            </h1>
+            <p class="tagline">Un RPG clásico por turnos.<br>Tus personajes viven en una medalla que puedes sostener, guardar e intercambiar.</p>
+            <div class="hero-actions">
+                <a class="btn" href="#lanzamiento">Avísame del lanzamiento</a>
+                <a class="btn btn-ghost" href="#historia">Descubre la historia</a>
+            </div>
+        </div>
+
+        <div class="medallion" role="img" aria-label="Tenshi saliendo de una medalla dorada">
+            <div class="disc"></div>
+            <div class="figure">
+                <img src="tenshi.webp" alt="" width="758" height="1400">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="historia" class="story">
+            <div class="wrap story-grid">
+                <h2>Historia</h2>
+                <div class="story-text">
+                    <p class="story-lead">En el año 20XX, lo único que se pudo ver en el cielo fue un haz de luz.</p>
+                    <p>Tras él, la tierra empezó a emanar partículas mágicas, y solo unos elegidos supieron aprovechar su potencial.</p>
+                    <p>Pero no todo eran buenas noticias: esas mismas partículas dieron vida a criaturas salvajes y destructivas.</p>
+                    <p class="question">¿Quieres saber qué ocurre en estas tierras baldías?</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="juego" class="section">
+            <div class="wrap split">
+                <div class="split-head">
+                    <h2>Cómo se juega</h2>
+                    <p class="lead">Combate por turnos al estilo de los RPG de siempre, pensado para jugar hoy, con tus personajes guardados en la palma de tu mano.</p>
+                </div>
+                <div class="steps">
+                    <article class="step">
+                        <span class="step-icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="9" r="5"/><circle cx="9" cy="37" r="5"/><circle cx="39" cy="37" r="5"/><path d="M20.5 13.5 12 31M27.5 13.5 36 31M15 39h18"/></svg>
+                        </span>
+                        <div>
+                            <h3>Combate de tipos</h3>
+                            <p>Derrota oleadas de enemigos en batallas por turnos. Cada tipo gana a uno y pierde contra otro, como en los clásicos, y solo un personaje combate a la vez. Elige bien a quién sacas al campo.</p>
+                        </div>
+                    </article>
+                    <article class="step">
+                        <span class="step-icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="19" cy="15" r="7"/><path d="M5 41c0-8 6-14 14-14s14 6 14 14M38 14v12M32 20h12"/></svg>
+                        </span>
+                        <div>
+                            <h3>Recluta a tus rivales</h3>
+                            <p>Tras cada oleada puedes convencer a un enemigo para que se una a tu bando. Cada reto pide un compañero distinto, y cada personaje tiene mecánicas, tipo y habilidades propias.</p>
+                        </div>
+                    </article>
+                    <article class="step">
+                        <span class="step-icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="3"/><path d="M16 16a11 11 0 0 0 0 16M32 16a11 11 0 0 1 0 16M10 10a19 19 0 0 0 0 28M38 10a19 19 0 0 1 0 28"/></svg>
+                        </span>
+                        <div>
+                            <h3>Medallas NFC</h3>
+                            <p>Tu personaje, con su nivel y sus características, se guarda en una medalla física. Apóyala en la base para llevarlo a la partida o intercámbiala con un amigo para que te eche una mano.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="base" class="base-section">
+            <div class="wrap split split-reverse">
+                <div class="base" aria-hidden="true" style="--size: min(380px, 78vw)">
+                    <div class="base-plate"></div>
+                    <span class="led" style="--i:0"></span>
+                    <span class="led" style="--i:1"></span>
+                    <span class="led" style="--i:2"></span>
+                    <span class="led" style="--i:3"></span>
+                    <span class="led" style="--i:4"></span>
+                    <span class="led" style="--i:5"></span>
+                    <span class="led" style="--i:6"></span>
+                    <span class="led" style="--i:7"></span>
+                    <span class="led" style="--i:8"></span>
+                    <span class="led" style="--i:9"></span>
+                    <span class="led" style="--i:10"></span>
+                    <span class="led" style="--i:11"></span>
+                    <div class="base-slot"></div>
+                </div>
+                <div>
+                    <h2>La base que da vida a tus medallas</h2>
+                    <p class="lead">Coloca una medalla sobre la base y tu personaje aparece en pantalla. La base reacciona a lo que pasa en la partida.</p>
+                    <ul class="features">
+                        <li><strong>Anillo de LEDs</strong> que responde a los sucesos del combate.</li>
+                        <li><strong>LED de vida</strong> para ver cuánta te queda sin mirar la pantalla.</li>
+                        <li><strong>Botones</strong> para actuar en el juego desde la propia base.</li>
+                        <li><strong>Figuras personalizadas</strong> de cada personaje para coleccionar.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="personajes" class="section">
+            <div class="wrap split">
+                <div class="split-head">
+                    <h2>Personajes</h2>
+                    <h3 class="char-name">Tenshi</h3>
+                    <p class="role">Novata del gremio de exploración</p>
+                    <p>Se unió hace poco al gremio de exploración. Acompáñala y usa sus habilidades de energía para retrasar los turnos de los oponentes y tomar el control de la batalla.</p>
+                </div>
+                <div class="medals">
+                    <figure class="medal">
+                        <div class="medal-disc medal-tenshi">
+                            <img src="tenshi.webp" alt="Tenshi, exploradora de pelo largo y blanco, con kimono corto blanco y rosa decorado con flores de cerezo" width="758" height="1400">
+                        </div>
+                        <figcaption>Tenshi</figcaption>
+                    </figure>
+                    <figure class="medal">
+                        <div class="medal-disc medal-locked" aria-hidden="true"><span>?</span></div>
+                        <figcaption>Por descubrir</figcaption>
+                    </figure>
+                    <figure class="medal">
+                        <div class="medal-disc medal-locked" aria-hidden="true"><span>?</span></div>
+                        <figcaption>Por descubrir</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="concepto" class="concept">
+            <div class="wrap">
+                <h2>Prueba de concepto</h2>
+                <p class="lead">Así podría verse una escena de diálogo dentro del juego. Es un primer boceto y el resultado final puede cambiar.</p>
+                <figure class="concept-shot">
+                    <img src="dialogo.webp" alt="Escena de diálogo: una chica de pelo corto rosado con diadema negra, identificada como ¿Desconocida?, dice «¡Solo queda un poco más! ¡Adelante!» sobre el fondo de una sala en ruinas con un enemigo al fondo." width="1280" height="720" loading="lazy">
+                </figure>
+            </div>
+        </section>
+
+        <section id="futuro" class="section future">
+            <div class="wrap">
+                <h2>Esto es solo el principio</h2>
+                <p class="lead">Medalion Project nace con una base sólida y mucho camino por delante.</p>
+                <div class="future-grid">
+                    <article>
+                        <h3>Cuida a tus personajes</h3>
+                        <p>Un escenario donde hablar con ellos y conocerlos mejor.</p>
+                    </article>
+                    <article>
+                        <h3>Diálogos a medida</h3>
+                        <p>Escenas que cambian según el personaje que uses y con quién hable.</p>
+                    </article>
+                    <article>
+                        <h3>Un mundo más grande</h3>
+                        <p>Más historia para seguir explorando las tierras baldías.</p>
+                    </article>
+                    <article>
+                        <h3>Combate con más capas</h3>
+                        <p>Armas y nuevos sistemas para replantearte cada batalla.</p>
+                    </article>
+                    <article>
+                        <h3>Juega desde el móvil</h3>
+                        <p>Una aplicación para no necesitar el lector NFC.</p>
+                    </article>
+                    <article>
+                        <h3>Holograma LCD</h3>
+                        <p>Una forma nueva de ver a tus personajes cobrar vida.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="lanzamiento" class="launch">
+            <div class="wrap launch-inner">
+                <h2>Pronto en tus manos</h2>
+                <p>Déjanos tu correo y te avisaremos el día del lanzamiento.</p>
+                <form class="signup" id="signup">
+                    <label class="sr-only" for="email">Correo electrónico</label>
+                    <input id="email" name="email" type="email" placeholder="tu@correo.com" autocomplete="email" required>
+                    <button class="btn btn-dark" type="submit">Avísame</button>
+                </form>
+                <p class="signup-msg" id="signup-msg" role="status" aria-live="polite"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="logo-blanco.png" alt="Medalion Project" width="995" height="259">
+        <p>&copy; 2026 HARIZAN S.L. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Provisional: muestra confirmación. Conecta el formulario a tu servicio de correo cuando lo tengas.
+        document.getElementById('signup').addEventListener('submit', function (e) {
+            e.preventDefault();
+            document.getElementById('signup-msg').textContent = '¡Listo! Te avisaremos cuando salga.';
+            this.reset();
+        });
+    </script>
+</body>
+</html>
